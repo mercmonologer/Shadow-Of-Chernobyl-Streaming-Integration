@@ -8,7 +8,7 @@ You will need to install/download the following pieces software/tools in order t
 <br/>
 <ul>
  <li>A copy of STALKER: Shadow Of Chernobyl: <a href="https://store.steampowered.com/app/4500/STALKER_Shadow_of_Chernobyl/">Steam Page</a></li>
- <li>An account with either StreamLabs or StreamElements (I personally like StreamElements more but I'm not your dad ¯\_(ツ)_/¯)</li>
+ <li>An account with StreamElements (You can modify the server.js file to work with StreamLabs but in it's current state this repo is built to work with StreamElements alone)</li>
  <li>The latest version of Node.js: <a href="https://nodejs.org/en/download">download here</a> </li>
  <li>The latest version of Microsoft Visual Studio (Visual Studio 2022 at time of writing): <a href="https://visualstudio.microsoft.com/">download here</a> Note: You NEED to install the Desktop C++ workload set up when installing Visual Studio or else the compilation won't work</li>
  <li>Git for downloading build dependencies for the OGSR engine: <a href="https://git-scm.com/downloads">download here</a></li>
@@ -31,6 +31,10 @@ You will need to install/download the following pieces software/tools in order t
   <li>Clone or download the repository at this <a href="https://github.com/OGSR/OGSR-Engine">location</a></li>
   <li>Clone or download this repository</li>
   <li>I reccommend that you put both folders on your desktop</li>
+ <li>Open up the OGSR-Engine Folder and click on the Update_DirectX_Components file and have it install the necessary components </li>
+ <br/>
+ <img src="images/update_directx.png"/>
+ <br/
   <li>Open up this repository folder, go to code and copy MySocketServer.cpp, MySocketServer.hpp, ActorNetwork.cpp into the OGSR Engine folder shown below.
    <br/>
    <h2>Copy the three files circled below from this repo</h2>
@@ -55,7 +59,7 @@ You will need to install/download the following pieces software/tools in order t
    <br />
   <img src="images/Add MySocketServer.cpp.png" />
   <br />
-  <li>Confirm MySocketServer.cpp is included and then go to the to bar and click build->build solution</li>
+  <li>Confirm MySocketServer.cpp is included and then go to the to bar and find build. Change the drop down under it from Debug to Release and click build->build solution</li>
    <br />
   <img src="images/Confirming my socket server.png" />
   <br />
@@ -93,9 +97,69 @@ You will need to install/download the following pieces software/tools in order t
  <h2>This is where if you use StreamLabs things will differ for you and you will have to do some more work on your own to modify the server.js file to work with it as I do not use StreamLabs, this is currently set up for StreamElements. The process should be very similar for using StreamLabs and using their <a href="https://dev.streamlabs.com/docs/socket-api">documentation</a> and ChatGPT to help you. I may comeback and do a premade version for StreamLabs later, but I only have so much time.</h2>
 <br/>
 <br/>
-<li>Now login to your StreamElements account(sign up for an account) and go to <a href="https://streamelements.com/dashboard/account/channels">your dashboard</a> and copy your JWT Token. <u><b>NOTE: DO NOT REVEAL/SEND THIS TOKEN TO ANYONE OTHERWISE THE CAN HAVE CONTROL OVER YOUR ACCOUNT! KEEP THIS PRIVATE! IF YOU MAKE A MODIFICATION TO MY SCRIPT AND UPLOAD IT SOMEWHERE PLEASE REMEMBER TO REMOVE YOUR TOKEN FROM THE SCRIPT OTHERWISE YOUR ACCOUNT WILL BE COMPROMISED! YOU HAVE BEEN WARNED!</b></u></li>
+<li>Now login to your StreamElements account(sign up for an account) and go to <a href="https://streamelements.com/dashboard/account/channels">your dashboard</a> and copy your JWT Token. <u><b>NOTE: DO NOT REVEAL/SEND THIS TOKEN TO ANYONE OTHERWISE THEy CAN HAVE CONTROL OVER YOUR ACCOUNT! KEEP THIS PRIVATE! IF YOU MAKE A MODIFICATION TO MY SCRIPT AND UPLOAD IT SOMEWHERE PLEASE REMEMBER TO REMOVE YOUR TOKEN FROM THE SCRIPT OTHERWISE YOUR ACCOUNT WILL BE COMPROMISED! YOU HAVE BEEN WARNED!</b></u></li>
+<br/>
+<img src="images/copy_jwt.png" />
+  <br />
+  <li>Now paste that jwt into a string here in your sever.js file</li>
+  <br/>
+<img src="images/paste jwt here.png" />
+  <br />
+  <li>Now open up a terminal in the same folder as where server.js is and type in the command "node server.js", you should see output like the one below</li>
+  <br/>
+<img src="images/cmd_output.png" />
+  <br />
+  <li>
+   Don't panic if you see the ECONNREFUSED, that is supposed to be happening, we are just confirming we can talk to StreamElement's servers at this time.
+  </li>
+  <li>
+   Now leave the node.js server running and start up STALKER: Shadow Of Chernobyl with the xrEngine executable like we did before and load into a save, you should see a connection get established like so below.
+  </li>
+    <br/>
+  <img src="images/connection_established.png" />
+  <br />
+</ol>
+  <h2>And Violia! and you now have a working integration with StreamElements, that currently whenever someone subcribes or tips you it should spawn an enemy</h2>
+  <br/>
+  <p>Currently the configuration for the spawn events is as below</p>
+  <table border="1">
+    <tr>
+        <th>Event/Tip Amount</th>
+        <th>Enemy Spawned</th>
+    </tr>
+    <tr>
+        <td>Subscribe</td>
+        <td>Spawn 1 Snork</td>
+    </tr>
+    <tr>
+        <td>Tip $1 up to $5</td>
+        <td>Spawn 10 Tushkanos</td>
+    </tr>
+    <tr>
+       <td>Tip $5 up to $10</td>
+        <td>Spawn 3 Psuedodogs</td>
+    </tr>
+       <tr>
+       <td>Tip $10 up to $15</td>
+        <td>Spawn 5 Bloodsuckers</td>
+    </tr>
+          <tr>
+       <td>Tip $15 and above</td>
+        <td>Spawn 3 Psuedogiants</td>
+    </tr>
+</table>
+<br/>
+<p>In order to change this configuration you will have to change both the server.js files and MySocketServer.cpp files. Whenever you change one of the engine files you WILL HAVE TO RECOMPILE IT and then drop the new executable into the STALKER game folder</p>
+
+<br/>
+<br/>
+<br/>
+<p>In case you would like to learn more about modding STALKER this old wiki is a good place to start to learn the basics and build and experiment with this repository from here. Good luck and thanks for reading!</p>
+
+  
+
 
  
-</ol>
+
 
 <br/>
