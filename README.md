@@ -19,7 +19,8 @@ You will need to install/download the following pieces software/tools in order t
 </ul>
 
 <h1>Step 1: Downloading and modifying the OGSR Engine</h1>
-![image](https://github.com/user-attachments/assets/01f4eac7-a382-4b7c-9911-15fbc4708827)
+![Alt text](images/Screenshot 2025-02-06 081523.png)
+
 
 
 <br/>
