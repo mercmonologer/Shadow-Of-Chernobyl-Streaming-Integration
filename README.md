@@ -33,10 +33,10 @@ You will need to install/download the following pieces software/tools in order t
   <li>I reccommend that you put both folders on your desktop</li>
   <li>Open up this repository folder, go to code and copy MySocketServer.cpp and MySocketServer.hpp into the OGSR Engine folder shown below.
    <br/>
-   <h2>Copy the two files circled below from this repo</h2>
-   <img src="images/Two files.png"/>
+   <h2>Copy the three files circled below from this repo</h2>
+   <img src="images/three_files.png"/>
    <br/>
-   <h2>Paste them into the OGSR Engine/osgr_engine/xrGame folder shown below</h2>
+   <h2>Paste them into the OGSR Engine/osgr_engine/xrGame folder shown below, if you get a prompt asking to replace a file, replace it that is intended</h2>
    <img src="images/Destination folder.png"/>
    <br/>
   <li>Go back to the root of the OGSR folder and click on the Engine.sln file shown below</li> 
@@ -61,9 +61,39 @@ You will need to install/download the following pieces software/tools in order t
   <br />
   <img src="images/build.png" />
   <br />
-  
+  <li>Then allow Visual Studio to work it's magic and you should have a freshly baked engine executable in your \OGSR-Engine\bin_x64 folder</li>
+    <br />
+   <img src="images/NewEngine.png" />
+  <br />
+  <li>Next go to Steam, right click on STALKER: Shadow of Chernobyl and go to Manage->Browse local Files (Or wherever the game folder is if you don't use Steam)</li>
+      <br />
+   <img src="images/local_files.png" />
+  <br />
+    <li>Drag and drop the new xrEngine executable into the STALKER game folder and do the same for the entire \OGSR-Engine\Resources_SoC_1.0006\gamedata folder (if you don't do this the game will crash at start up)</li>
+   <br />
+  <img src="images/moving_engine.png" />
+  <br />
+  <img src="images/moving_gamedata.png" />
+  <br />
+   <li>Now in the STALKER: Shadow Of Chernobyl game folder click on the newly modved xrEngine.exe and the game should start up.</li>
+<br/>
+<h2>Phew! That was the worst of it, but there is still some more work to do. Congratulations you just added a custom modification to a game engine!</h2> 
+</ol>
+<br>
+<h1>Step 2: Setting up and modifying your Node.js Server</h1>
+<ol>
+ <li>In the code editor of your choice open up the server.js file from the code folder of this repo</li>
+    <br />
+  <img src="images/open_server.png" />
+  <br />
+  <li>It should look like this with alot of scary red lines, don't panic, this is intended</li>
+    <br />
+  <img src="images/server_file.png" />
+  <br />
+ <h2>This is where if you use StreamLabs things will differ for you and you will have to do some more work on your own to modify the server.js file to work with it as I do not use StreamLabs, this is currently set up for StreamElements. The process should be very similar for using StreamLabs and using their <a href="https://dev.streamlabs.com/docs/socket-api">documentation</a> and ChatGPT to help you. I may comeback and do a premade version for StreamLabs later, but I only have so much time.</h2>
+<br/>
+
  
 </ol>
-
 
 <br/>
