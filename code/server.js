@@ -105,6 +105,11 @@ ws.on("message", (data) => {
    else {
 
    try { 
+      if(data.toString() === "3") {
+        console.log("response to heartbeat recieved")
+        return
+    }
+
     const parsed = JSON.parse(data.toString().substring(2))
     console.log("message", parsed, typeof parsed)
 
