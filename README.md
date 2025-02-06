@@ -93,7 +93,7 @@ You will need to install/download the following pieces software/tools in order t
  <h2>This is where if you use StreamLabs things will differ for you and you will have to do some more work on your own to modify the server.js file to work with it as I do not use StreamLabs, this is currently set up for StreamElements. The process should be very similar for using StreamLabs and using their <a href="https://dev.streamlabs.com/docs/socket-api">documentation</a> and ChatGPT to help you. I may comeback and do a premade version for StreamLabs later, but I only have so much time.</h2>
 <br/>
 <br/>
-<li>Now login to your StreamElements account(sign up for an account) and go to <a href="https://streamelements.com/dashboard/account/channels">your dashboard</a> and copy your JWT Token. <span style="color:red"> </span></li>$${\color{red}NOTE: DO NOT REVEAL/SEND THIS TOKEN TO ANYONE OTHERWISE THE CAN HAVE CONTROL OVER YOUR ACCOUNT! KEEP THIS PRIVATE! IF YOU MAKE A MODIFICATION TO MY SCRIPT AND UPLOAD IT SOMEWHERE PLEASE REMEMBER TO REMOVE YOUR TOKEN FROM THE SCRIPT OTHERWISE YOUR ACCOUNT WILL BE COMPROMISED! YOU HAVE BEEN WARNED!}$$
+<li>Now login to your StreamElements account(sign up for an account) and go to <a href="https://streamelements.com/dashboard/account/channels">your dashboard</a> and copy your JWT Token. <h2>NOTE: DO NOT REVEAL/SEND THIS TOKEN TO ANYONE OTHERWISE THE CAN HAVE CONTROL OVER YOUR ACCOUNT! KEEP THIS PRIVATE! IF YOU MAKE A MODIFICATION TO MY SCRIPT AND UPLOAD IT SOMEWHERE PLEASE REMEMBER TO REMOVE YOUR TOKEN FROM THE SCRIPT OTHERWISE YOUR ACCOUNT WILL BE COMPROMISED! YOU HAVE BEEN WARNED!</h2></li>
 
  
 </ol>
