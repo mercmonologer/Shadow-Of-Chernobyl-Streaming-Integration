@@ -28,6 +28,7 @@ You will need to install/download the following pieces software/tools in order t
 <ol>
   <li>Clone or download the repository at this <a href="https://github.com/OGSR/OGSR-Engine">location</a></li>
   <li>Clone or download this repository</li>
+  <li>I reccommend that you put both folders on your desktop</li>
   <li>Open up this repository folder, go to code and copy MySocketServer.cpp and MySocketServer.hpp into the OGSR Engine folder shown below.
    <br/>
    <h2>Copy the two files circled below from this repo</h2>
@@ -36,9 +37,17 @@ You will need to install/download the following pieces software/tools in order t
    <h2>Paste them into the OGSR Engine/osgr_engine/xrGame folder shown below</h2>
    <img src="images/Destination folder.png"/>
    <br/>
-  <li>Open up the OGSR folder and click on the Engine.sln file shown below</li> 
+  <li>Go back to the root of the OGSR folder and click on the Engine.sln file shown below</li> 
   <br />
   <img src="images/engine.sln.png" />
+  <br />
+ <li>Visual Studio should open up and look like this</li>
+  <br />
+  <img src="images/visual studio1.png" />
+  <br />
+ <li>On the right bar click on the xrGame drop down and then right click and click add->add existing item</li>
+   <br />
+  <img src="images/add item.png" />
   <br />
 </ol>
 
