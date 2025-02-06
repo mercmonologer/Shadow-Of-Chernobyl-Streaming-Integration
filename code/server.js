@@ -83,10 +83,10 @@ ws.on("open", () => {
     // Authenticate with StreamElements
     ws.send(`42["authenticate", {"method": "jwt", "token": "${JWT_TOKEN}"}]`);
 
-    setInterval(() => { 
+      setInterval(() => { 
         console.log("Sending heartbeat");
-        ws.send("42[\"ping\"]");
-    }, 30000);
+        ws.send("2");
+    }, 25000);
 });
 
 let firstMessage = true
