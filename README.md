@@ -31,7 +31,7 @@ You will need to install/download the following pieces software/tools in order t
   <li>Clone or download the repository at this <a href="https://github.com/OGSR/OGSR-Engine">location</a></li>
   <li>Clone or download this repository</li>
   <li>I reccommend that you put both folders on your desktop</li>
-  <li>Open up this repository folder, go to code and copy MySocketServer.cpp and MySocketServer.hpp into the OGSR Engine folder shown below.
+  <li>Open up this repository folder, go to code and copy MySocketServer.cpp, MySocketServer.hpp, ActorNetwork.cpp into the OGSR Engine folder shown below.
    <br/>
    <h2>Copy the three files circled below from this repo</h2>
    <img src="images/three_files.png"/>
