@@ -75,7 +75,7 @@ You will need to install/download the following pieces software/tools in order t
   <br />
   <img src="images/moving_gamedata.png" />
   <br />
-   <li>Now in the STALKER: Shadow Of Chernobyl game folder click on the newly modved xrEngine.exe and the game should start up.</li>
+   <li>Now in the STALKER: Shadow Of Chernobyl game folder click on the newly moved xrEngine.exe and the game should start up.</li>
 <br/>
 <h2>Phew! That was the worst of it, but there is still some more work to do. Congratulations you just added a custom modification to a game engine!</h2> 
 </ol>
