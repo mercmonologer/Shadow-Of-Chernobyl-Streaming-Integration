@@ -78,7 +78,7 @@ You should see output similar to the following:
 ![CMD Output](images/cmd_output.png)
 <br/>
 7. Do not worry if you see an `ECONNREFUSED` error; it is expected as the Shadow Of Chernobyl is not running at the moment. <br/>
-8. With the Node.js server running, launch **STALKER: Shadow of Chernobyl** using the modified `xrEngine.exe` and load a save. A connection should be established, as shown below:
+8. With the Node.js server running, launch **STALKER: Shadow of Chernobyl** using the modified `xrEngine.exe` and load a save. A connection should be established, as shown below: <br/>
 ![Connection Established](images/connection_established.png)
 
 **And viola!** You now have a working integration with StreamElements—whenever someone subscribes or tips, an enemy will spawn.
