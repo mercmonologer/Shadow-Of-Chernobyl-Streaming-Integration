@@ -1,4 +1,5 @@
 # Shadow-Of-Chernobyl-Streaming-Integration
+![Alt text](images/Screenshot 2025-02-06 081523.png)
 This repo is meant as guide for anyone looking to add streaming events integration into their STALKER: Shadow Of Chernobyl playthrough. Currently the default is to just spawn in different enemies around the player chracter when an event occurs, but you are free to modify and use the code in any way you wish for your purposes. The code here acts as an easy to set up ready to go solution or as an entry point for them to create further integrations and functionality so they don't have to struggle like I did to figure out how to do this. So Enjoy.
 
 <h1>Prerequisites</h1>
@@ -19,7 +20,7 @@ You will need to install/download the following pieces software/tools in order t
 </ul>
 
 <h1>Step 1: Downloading and modifying the OGSR Engine</h1>
-![Alt text](images/Screenshot 2025-02-06 081523.png)
+
 
 
 
