@@ -25,6 +25,8 @@ You will need to install/download the following pieces software/tools in order t
 
 <img src="images/Screenshot 2025-02-06 081523.png" />
 <br/>
+<p>This is the main meat and potatoes of getting this set up</p>
+<br>
 <ol>
   <li>Clone or download the repository at this <a href="https://github.com/OGSR/OGSR-Engine">location</a></li>
   <li>Clone or download this repository</li>
@@ -43,12 +45,24 @@ You will need to install/download the following pieces software/tools in order t
   <br />
  <li>Visual Studio should open up and look like this</li>
   <br />
-  <img src="images/visual studio1.png" />
+  <img src="images/visual studio 1.png" />
   <br />
- <li>On the right bar click on the xrGame drop down and then right click and click add->add existing item</li>
+ <li>On the right bar click on the xrGame drop down and then right click and click add->Existing Item</li>
    <br />
   <img src="images/add item.png" />
   <br />
+  <li>Select MySocketServer.cpp in the file dialog and click add</li>
+   <br />
+  <img src="images/Add MySocketServer.cpp.png" />
+  <br />
+  <li>Confirm MySocketServer.cpp is included and then go to the to bar and click build->build solution</li>
+   <br />
+  <img src="images/Confirming my socket server.png" />
+  <br />
+  <img src="images/build.png" />
+  <br />
+  
+ 
 </ol>
 
 
