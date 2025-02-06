@@ -1,165 +1,102 @@
 # Shadow-Of-Chernobyl-Streaming-Integration
 
-This repo is meant as guide for anyone looking to add streaming events integration into their STALKER: Shadow Of Chernobyl playthrough. Currently the default is to just spawn in different enemies around the player chracter when an event occurs, but you are free to modify and use the code in any way you wish for your purposes. The code here acts as an easy to set up ready to go solution or as an entry point for them to create further integrations and functionality so they don't have to struggle like I did to figure out how to do this. So Enjoy.
+This repository serves as a guide for integrating streaming events into your **STALKER: Shadow Of Chernobyl** playthrough. By default, the integration spawns different enemies around the player when an event occurs, but you are free to modify the code to suit your purposes. The code provided serves as an easy-to-set-up solution or an entry point for creating further integrations and functionality—so you don't have to struggle like I did. Enjoy!
 
-<h1>Prerequisites</h1>
-You will need to install/download the following pieces software/tools in order to successfully set up the integration as it currently exists
-<h3>Required</h3>
-<br/>
-<ul>
- <li>A copy of STALKER: Shadow Of Chernobyl: <a href="https://store.steampowered.com/app/4500/STALKER_Shadow_of_Chernobyl/">Steam Page</a></li>
- <li>An account with StreamElements (You can modify the server.js file to work with StreamLabs but in it's current state this repo is built to work with StreamElements alone)</li>
- <li>The latest version of Node.js: <a href="https://nodejs.org/en/download">download here</a> </li>
- <li>The latest version of Microsoft Visual Studio (Visual Studio 2022 at time of writing): <a href="https://visualstudio.microsoft.com/">download here</a> Note: You NEED to install the Desktop C++ workload set up when installing Visual Studio or else the compilation won't work</li>
- <li>Git for downloading build dependencies for the OGSR engine: <a href="https://git-scm.com/downloads">download here</a></li>
-</ul>
-<h3>Reccommended</h3>
-<br/>
-<ul>
-  <li>A code editor of your choice (I personally like <a href="https://vscodium.com/">VSCodium</a>) to edit your node.js server file</li>
+## Prerequisites
 
-</ul>
+You will need to install/download the following software/tools to set up the integration as it currently exists.
 
-<h1>Step 1: Downloading and modifying the OGSR Engine</h1>
-<br/>
+### Required
+- **STALKER: Shadow Of Chernobyl** – [Steam Page](https://store.steampowered.com/app/4500/STALKER_Shadow_of_Chernobyl/)
+- An account with **StreamElements**  
+  *(Note: You can modify `server.js` to work with StreamLabs, but this repository is built to work with StreamElements only.)*
+- The latest version of **Node.js** – [download here](https://nodejs.org/en/download)
+- The latest version of **Microsoft Visual Studio** (Visual Studio 2022 at the time of writing) – [download here](https://visualstudio.microsoft.com/)  
+  **Note:** You must install the **Desktop C++ workload** during Visual Studio installation; otherwise, the compilation will fail.
+- **Git** for downloading build dependencies for the OGSR engine – [download here](https://git-scm.com/downloads)
 
-<img src="images/Screenshot 2025-02-06 081523.png" />
-<br/>
-<p>This is the main meat and potatoes of getting this set up</p>
-<br>
-<ol>
-  <li>Clone or download the repository at this <a href="https://github.com/OGSR/OGSR-Engine">location</a></li>
-  <li>Clone or download this repository</li>
-  <li>I reccommend that you put both folders on your desktop</li>
- <li>Open up the OGSR-Engine Folder and click on the Update_DirectX_Components file and have it install the necessary components </li>
- <br/>
- <img src="images/update_directx.png"/>
- <br/
-  <li>Open up this repository folder, go to code and copy MySocketServer.cpp, MySocketServer.hpp, ActorNetwork.cpp into the OGSR Engine folder shown below.
+### Recommended
+- A code editor of your choice (I personally like [VSCodium](https://vscodium.com/)) for editing your Node.js server file.
+
+## Step 1: Downloading and Modifying the OGSR Engine
+
+![Screenshot](images/Screenshot%202025-02-06%20081523.png)
+
+This is the main part of setting up the integration.
+
+1. **Clone or download** the OGSR Engine repository from [here](https://github.com/OGSR/OGSR-Engine).
+2. **Clone or download** this repository.
+3. It is recommended to place both folders on your desktop.
+4. Open the **OGSR-Engine** folder and run the **Update_DirectX_Components** file to install the necessary components.
+   ![Update DirectX](images/update_directx.png)
+5. Open this repository's **code** folder and copy `MySocketServer.cpp`, `MySocketServer.hpp`, and `ActorNetwork.cpp`.
+   - **Copy the three files circled below from this repo:**
+     ![Three Files](images/three_files.png)
+   - **Paste them into the OGSR Engine's `osgr_engine/xrGame` folder.**  
+     If prompted to replace a file, confirm the replacement.
+     ![Destination Folder](images/Destination%20folder.png)
+6. Go to the root of the OGSR folder and open the `Engine.sln` file.
+   ![Engine.sln](images/engine.sln.png)
+7. Visual Studio will open. It should look like this:
+   ![Visual Studio](images/visual%20studio%201.png)
+8. In the right panel, click on the `xrGame` dropdown, right-click, and choose **Add → Existing Item**.
+   ![Add Item](images/add%20item.png)
+9. Select `MySocketServer.cpp` in the file dialog and click **Add**.
+   ![Add MySocketServer.cpp](images/Add%20MySocketServer.cpp.png)
+10. Confirm that `MySocketServer.cpp` is included in the project. Then, in the top menu, switch the build configuration from **Debug** to **Release** and click **Build → Build Solution**.
+    </br>
+    ![Confirm Socket Server](images/Confirming%20my%20socket%20server.png)
+    ![Build](images/build.png)
+12. Allow Visual Studio to compile. The new engine executable will be in the `OGSR-Engine/bin_x64` folder.
+    ![New Engine](images/NewEngine.png)
+13. Next, in Steam, right-click on **STALKER: Shadow of Chernobyl** and select **Manage → Browse Local Files** (or locate the game folder manually if you're not using Steam).
+    </br>
+    ![Local Files](images/local_files.png)
+14. Drag and drop the new `xrEngine.exe` into the STALKER game folder, and do the same for the entire `OGSR-Engine/Resources_SoC_1.0006/gamedata` folder.
+    ![Moving Engine](images/moving_engine.png)
+    ![Moving Gamedata](images/moving_gamedata.png)
+15. In the STALKER game folder, click on the new `xrEngine.exe` to start the game.
+
+**Phew!** That was the toughest part, but congratulations—you’ve just added a custom modification to a game engine!
+
+## Step 2: Setting Up and Modifying Your Node.js Server
+
+1. Open the `server.js` file (located in this repository’s **code** folder) in your preferred code editor.
+   ![Open Server](images/open_server.png)
+2. The file may display several error highlights (don’t worry, this is intended).
+   ![Server File](images/server_file.png)
+3. **Note:** If you use StreamLabs, you will need to modify `server.js` accordingly. This repository is currently set up for StreamElements. The process should be similar if you refer to the [StreamLabs Socket API documentation](https://dev.streamlabs.com/docs/socket-api) and use ChatGPT for assistance.
+4. Log in to your StreamElements account (or sign up for one), navigate to [your dashboard](https://streamelements.com/dashboard/account/channels), and copy your **JWT Token**.  
+   **WARNING:** Do not share this token with anyone—it grants control over your account!
+   ![Copy JWT](images/copy_jwt.png)
+5. Paste the JWT token into `server.js` where indicated.
    <br/>
-   <h2>Copy the three files circled below from this repo</h2>
-   <img src="images/three_files.png"/>
-   <br/>
-   <h2>Paste them into the OGSR Engine/osgr_engine/xrGame folder shown below, if you get a prompt asking to replace a file, replace it that is intended</h2>
-   <img src="images/Destination folder.png"/>
-   <br/>
-  <li>Go back to the root of the OGSR folder and click on the Engine.sln file shown below</li> 
-  <br />
-  <img src="images/engine.sln.png" />
-  <br />
- <li>Visual Studio should open up and look like this</li>
-  <br />
-  <img src="images/visual studio 1.png" />
-  <br />
- <li>On the right bar click on the xrGame drop down and then right click and click add->Existing Item</li>
-   <br />
-  <img src="images/add item.png" />
-  <br />
-  <li>Select MySocketServer.cpp in the file dialog and click add</li>
-   <br />
-  <img src="images/Add MySocketServer.cpp.png" />
-  <br />
-  <li>Confirm MySocketServer.cpp is included and then go to the to bar and find build. Change the drop down under it from Debug to Release and click build->build solution</li>
-   <br />
-  <img src="images/Confirming my socket server.png" />
-  <br />
-  <img src="images/build.png" />
-  <br />
-  <li>Then allow Visual Studio to work it's magic and you should have a freshly baked engine executable in your \OGSR-Engine\bin_x64 folder</li>
-    <br />
-   <img src="images/NewEngine.png" />
-  <br />
-  <li>Next go to Steam, right click on STALKER: Shadow of Chernobyl and go to Manage->Browse local Files (Or wherever the game folder is if you don't use Steam)</li>
-      <br />
-   <img src="images/local_files.png" />
-  <br />
-    <li>Drag and drop the new xrEngine executable into the STALKER game folder and do the same for the entire \OGSR-Engine\Resources_SoC_1.0006\gamedata folder (if you don't do this the game will crash at start up)</li>
-   <br />
-  <img src="images/moving_engine.png" />
-  <br />
-  <img src="images/moving_gamedata.png" />
-  <br />
-   <li>Now in the STALKER: Shadow Of Chernobyl game folder click on the newly moved xrEngine.exe and the game should start up.</li>
-<br/>
-<h2>Phew! That was the worst of it, but there is still some more work to do. Congratulations you just added a custom modification to a game engine!</h2> 
-</ol>
-<br>
-<h1>Step 2: Setting up and modifying your Node.js Server</h1>
-<ol>
- <li>In the code editor of your choice open up the server.js file from the code folder of this repo</li>
-    <br />
-  <img src="images/open_server.png" />
-  <br />
-  <li>It should look like this with alot of scary red lines, don't panic, this is intended</li>
-    <br />
-  <img src="images/server_file.png" />
-  <br />
- <h2>This is where if you use StreamLabs things will differ for you and you will have to do some more work on your own to modify the server.js file to work with it as I do not use StreamLabs, this is currently set up for StreamElements. The process should be very similar for using StreamLabs and using their <a href="https://dev.streamlabs.com/docs/socket-api">documentation</a> and ChatGPT to help you. I may comeback and do a premade version for StreamLabs later, but I only have so much time.</h2>
-<br/>
-<br/>
-<li>Now login to your StreamElements account(sign up for an account) and go to <a href="https://streamelements.com/dashboard/account/channels">your dashboard</a> and copy your JWT Token. <u><b>NOTE: DO NOT REVEAL/SEND THIS TOKEN TO ANYONE OTHERWISE THEy CAN HAVE CONTROL OVER YOUR ACCOUNT! KEEP THIS PRIVATE! IF YOU MAKE A MODIFICATION TO MY SCRIPT AND UPLOAD IT SOMEWHERE PLEASE REMEMBER TO REMOVE YOUR TOKEN FROM THE SCRIPT OTHERWISE YOUR ACCOUNT WILL BE COMPROMISED! YOU HAVE BEEN WARNED!</b></u></li>
-<br/>
-<img src="images/copy_jwt.png" />
-  <br />
-  <li>Now paste that jwt into a string here in your sever.js file</li>
-  <br/>
-<img src="images/paste jwt here.png" />
-  <br />
-  <li>Now open up a terminal in the same folder as where server.js is and type in the command "node server.js", you should see output like the one below</li>
-  <br/>
-<img src="images/cmd_output.png" />
-  <br />
-  <li>
-   Don't panic if you see the ECONNREFUSED, that is supposed to be happening, we are just confirming we can talk to StreamElement's servers at this time.
-  </li>
-  <li>
-   Now leave the node.js server running and start up STALKER: Shadow Of Chernobyl with the xrEngine executable like we did before and load into a save, you should see a connection get established like so below.
-  </li>
-    <br/>
-  <img src="images/connection_established.png" />
-  <br />
-</ol>
-  <h2>And Violia! and you now have a working integration with StreamElements, that currently whenever someone subcribes or tips you it should spawn an enemy</h2>
-  <br/>
-  <p>Currently the configuration for the spawn events is as below</p>
-  <table border="1">
-    <tr>
-        <th>Event/Tip Amount</th>
-        <th>Enemy Spawned</th>
-    </tr>
-    <tr>
-        <td>Subscribe</td>
-        <td>Spawn 1 Snork</td>
-    </tr>
-    <tr>
-        <td>Tip $1 up to $5</td>
-        <td>Spawn 10 Tushkanos</td>
-    </tr>
-    <tr>
-       <td>Tip $5 up to $10</td>
-        <td>Spawn 3 Psuedodogs</td>
-    </tr>
-       <tr>
-       <td>Tip $10 up to $15</td>
-        <td>Spawn 5 Bloodsuckers</td>
-    </tr>
-          <tr>
-       <td>Tip $15 and above</td>
-        <td>Spawn 3 Psuedogiants</td>
-    </tr>
-</table>
-<br/>
-<p>In order to change this configuration you will have to change both the server.js files and MySocketServer.cpp files. Whenever you change one of the engine files you WILL HAVE TO RECOMPILE IT and then drop the new executable into the STALKER game folder</p>
+   ![Paste JWT](images/paste%20jwt%20here.png)
+7. Open a terminal in the same folder as `server.js` and run: `node server.js`
 
-<br/>
-<br/>
-<br/>
-<p>In case you would like to learn more about modding STALKER this old wiki is a good place to start to learn the basics and build and experiment with this repository from here. Good luck and thanks for reading!</p>
+You should see output similar to the following:
+![CMD Output](images/cmd_output.png)
+7. Do not worry if you see an `ECONNREFUSED` error; it is expected as the server confirms connectivity with StreamElements' servers.
+8. With the Node.js server running, launch **STALKER: Shadow of Chernobyl** using the modified `xrEngine.exe` and load a save. A connection should be established, as shown below:
+![Connection Established](images/connection_established.png)
 
-  
+**And viola!** You now have a working integration with StreamElements—whenever someone subscribes or tips, an enemy will spawn.
 
+Currently, the spawn events are configured as follows:
 
- 
+| Event/Tip Amount   | Enemy Spawned        |
+|--------------------|----------------------|
+| Subscribe          | Spawn 1 Snork        |
+| Tip $1 up to $5    | Spawn 10 Tushkanos   |
+| Tip $5 up to $10   | Spawn 3 Psuedodogs   |
+| Tip $10 up to $15  | Spawn 5 Bloodsuckers |
+| Tip $15 and above  | Spawn 3 Psuedogiants |
 
+To change this configuration, modify both `server.js` and `MySocketServer.cpp`. **Any changes to the engine files require recompilation!**
 
-<br/>
+## Additional Resources
+
+For more information about modding **STALKER** and to learn the basics, refer to [this wiki](https://sdk.stalker-game.com/en/index.php?title=Your_first_modification).
+
+Good luck and thanks for reading!
+
