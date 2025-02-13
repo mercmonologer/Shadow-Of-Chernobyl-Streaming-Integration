@@ -18,6 +18,17 @@ You will need to install/download the following software/tools to set up the int
 ### Recommended
 - A code editor of your choice (I personally like [VSCodium](https://vscodium.com/)) for editing your Node.js server file.
 
+
+## ⚠ Important: Save Your Game Often! ⚠
+
+This mod enhances your gameplay, but like all mods, it may occasionally stop working or require a reload to function properly.  
+
+- **Save your game frequently** to avoid losing progress.  
+- If the mod stops responding, try **reloading the game** to restore functionality.  
+- Crashes **can happen**, so keeping multiple save points is highly recommended.  
+
+Stay safe and happy gaming! 🎮  
+
 ## Step 1: Downloading and Modifying the OGSR Engine
 
 ![Screenshot](images/Screenshot%202025-02-06%20081523.png)
