@@ -21,13 +21,8 @@ You will need to install/download the following software/tools to set up the int
 
 ## ⚠ Important: Save Your Game Often! ⚠
 
-This mod enhances your gameplay, but like all mods, it may occasionally stop working or require a reload to function properly.  
-
-- **Save your game frequently** to avoid losing progress.  
-- If the mod stops responding, try **reloading the game** to restore functionality.  
-- Crashes **can happen**, so keeping multiple save points is highly recommended.  
-
-Stay safe and happy gaming! 🎮  
+- If the mod stops responding, try **reloading the game** to get it working again!  
+- Crashes **can and do happen**, so keeping multiple save points is important! Spam the F5 Key!
 
 ## Step 1: Downloading and Modifying the OGSR Engine
 
