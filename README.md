@@ -21,7 +21,7 @@ You will need to install/download the following software/tools to set up the int
 
 ## ⚠ Important: Save Your Game Often! ⚠
 
-- If the mod stops responding, try **reloading the game** to get it working again!  
+- If the mod stops responding, try **reloading a recent save** to get it working again!  
 - Crashes **can and do happen**, so keeping multiple save points is important! Spam the F5 Key!
 
 ## Step 1: Downloading and Modifying the OGSR Engine
