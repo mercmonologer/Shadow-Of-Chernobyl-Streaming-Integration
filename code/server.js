@@ -72,10 +72,11 @@ class STALKERConnection {
 // Initialize connection
 const stalkerConnection = new STALKERConnection();
 
-
+const subscribedUsers = new Set();
 
 //! CHANGE THIS TO THE STREAMLABS WEBSOCKET URL IF YOU WANT TO USE THEIR SERVICE, read the documentation here: https://dev.streamlabs.com/docs/socket-api
 const ws = new WebSocket(`wss://realtime.streamelements.com/socket.io/?transport=websocket`);
+
 
 ws.on("open", () => {
     console.log("Connected to StreamElements WebSocket");
@@ -131,9 +132,17 @@ ws.on("message", (data) => {
                 stalkerConnection.sendCommand('spawn_caseoh');
             }
         }
-        if(eventData.type === "subscriber"){
-            stalkerConnection.sendCommand("you_got_snorked")
-        }
+                 if (eventData.type === "subscriber") {
+                    const username = eventData.data.username;
+                    
+                    if (!subscribedUsers.has(username)) {
+                        subscribedUsers.add(username);
+                        stalkerConnection.sendCommand("you_got_snorked");
+                        console.log(`User ${username} subscribed and received command.`);
+                    } else {
+                        console.log(`User ${username} has already subscribed, ignoring.`);
+                    }
+                }
     }
     
    } catch (err){ 
